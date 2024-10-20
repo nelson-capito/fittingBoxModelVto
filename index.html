@@ -3,45 +3,60 @@
 <head>
 <title>FittingBox</title>
 <style type="text/css">
-  body {
+  html, body {
+    height: 100%;
     margin: 0;
-    padding: 0;
-    font: 62.5% arial, sans-serif;
-    background: #ccc;
-  }       
+  }
+  #wrapper {
+    min-height: 100%; 
+  }
+  .lunOverlay {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: 10;
+  }
 </style>
 </head>
 <body>
-  <div>
-    <button type="button" onclick="addOverlay()">Click Me!</button>
-    <div id="overlay">
+  <div id="wrapper">
+    <div id="overlay" class="lunOverlay">
   </div>
   <script src="https://bsdk.api.ditto.com/default/5.6.0/en-us/api.js"></script>
   <script>
-            function addOverlay() {
-          // Overlay Constructor/
-          
-          window.postMessage("message")
-          new Ditto.Overlay(
-            {
-              tryOnServer: "https://vto.partners.api.ditto.com/",
-              domSelector: "#overlay",
-              accessKey: "1840784ba7da9008",
-              partnerId: "idealvision",
-              scanId: "ditto_model_male_06_hd",
-              glassesId: "CV708BLKT1522M48",
-              overlaySignature: "ZGl0dG9fbW9kZWxfbWFsZV8wNl9oZC4xNzI5MzEyMzMwLnlYT29ZM0VzU2U4WlVvYXc4RW9tZDF1TzVkNWxYWFFyaTlLNFJRbmdERW84ZkR5LVBmX2Q3YUpOUkxKQnMwSGRtRTFHWGQ2Si1CTUhoclBidXlGNmRR",
-              disablePreview: true,
-              a11yOverlayTurnIndicator: false,
-            },
-            {
-              initialized: (d) => alert('initialized'),
-              success: (d) => alert('success'),
-              failure: (e) => alert('failure'),
-              onclick: (ev) => alert('onclick'), // optional
-            }
-          );
+    function addOverlay() {
+      // Overlay Constructor/
+      new Ditto.Overlay(
+        {
+          tryOnServer: "https://vto.partners.api.ditto.com/",
+          domSelector: "#overlay",
+          accessKey: "1840784ba7da9008",
+          partnerId: "idealvision",
+          scanId: "ditto_model_male_06_hd",
+          glassesId: "CV708BLKT1522M48",
+          overlaySignature: "ZGl0dG9fbW9kZWxfbWFsZV8wNl9oZC4xNzI5MzEyMzMwLnlYT29ZM0VzU2U4WlVvYXc4RW9tZDF1TzVkNWxYWFFyaTlLNFJRbmdERW84ZkR5LVBmX2Q3YUpOUkxKQnMwSGRtRTFHWGQ2Si1CTUhoclBidXlGNmRR",
+          disablePreview: true,
+          a11yOverlayTurnIndicator: false,
+        },
+        {
+          initialized: (d) => {
+            //alert('initialized')
+          },
+          success: (d) => {
+            //alert('success')
+          },
+          failure: (e) => {
+            //alert('failure')
+          },
+          onclick: (ev) => {
+            //alert('onclick')
+          }, // optional
         }
+      );
+    }
+    window.onload = addOverlay;
   </script>
 </body>
 </html>
