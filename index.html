@@ -5,10 +5,8 @@
 <style type="text/css">
   html, body {
     height: 100%;
+    min-height:100vh;
     margin: 0;
-  }
-  #wrapper {
-    min-height: 100%; 
   }
   .lunOverlay {
     position: fixed;
@@ -21,11 +19,11 @@
 </style>
 </head>
 <body>
-  <div id="wrapper">
-    <div id="overlay" class="lunOverlay">
-  </div>
+  <div id="overlay" class="lunOverlay"></div>
   <script src="https://bsdk.api.ditto.com/default/5.6.0/en-us/api.js"></script>
   <script>
+    
+    console.log(window.ReactNativeWebView);
     function addOverlay() {
       // Overlay Constructor/
       new Ditto.Overlay(
