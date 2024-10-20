@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>FittingBox</title>
+<style type="text/css">
+  body {
+    margin: 0;
+    padding: 0;
+    font: 62.5% arial, sans-serif;
+    background: #ccc;
+  }       
+</style>
+</head>
+<body>
+  <div>
+    <button type="button" onclick="addOverlay()">Click Me!</button>
+    <div id="fitmix-container"></div>
+  </div>
+  <script src="https://bsdk.api.ditto.com/default/5.6.0/en-us/api.js"></script>
+  <script src="https://bsdk.api.ditto.com/default/5.6.0/en-us/overlay.js"></script>
+  <script src="polyfills-SCHOHYNV.js" type="module"></script><script src="main-B73CELQY.js" type="module"></script>
+  <script type="text/javascript" src="https://static.fittingbox.com/libs/FBxVideoPlayerLegacy/0.4.7/FBxVideoPlayerLegacy.js"></script>
+  <script>
+            function addOverlay() {
+          // Overlay Constructor/
+          
+          window.postMessage("message")
+          new Ditto.Overlay(
+            {
+              tryOnServer: "https://vto.partners.api.ditto.com/",
+              domSelector: "#overlay",
+              accessKey: "1840784ba7da9008",
+              partnerId: "idealvision",
+              scanId: "ditto_model_male_06_hd",
+              glassesId: "CV708BLKT1522M48",
+              overlaySignature: "ZGl0dG9fbW9kZWxfbWFsZV8wNl9oZC4xNzI5MzEyMzMwLnlYT29ZM0VzU2U4WlVvYXc4RW9tZDF1TzVkNWxYWFFyaTlLNFJRbmdERW84ZkR5LVBmX2Q3YUpOUkxKQnMwSGRtRTFHWGQ2Si1CTUhoclBidXlGNmRR",
+              disablePreview: true,
+              a11yOverlayTurnIndicator: false,
+            },
+            {
+              initialized: (d) => alert('initialized'),
+              success: (d) => alert('success'),
+              failure: (e) => alert('failure'),
+              onclick: (ev) => alert('onclick'), // optional
+            }
+          );
+        }
+  </script>
+</body>
+</html>
