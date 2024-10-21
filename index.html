@@ -55,12 +55,11 @@
     }
     window.onload = addOverlay;
 
-    window.addEventListener('message', (nativeEvent) => {  
-      let messageObject = JSON.stringify(nativeEvent.data);      
-      console.log(messageObject);
-      window.ReactNativeWebView?.postMessage(messageObject?.scanId?.length >=0)
+    window.addEventListener('message', (nativeEvent) => {
+      let messageObject = JSON.stringify(nativeEvent.data);
+      window.ReactNativeWebView?.postMessage(messageObject?.scanId?.length)
       if (messageObject?.scanId?.length >=0 && messageObject?.glassesId?.length >=0) {
-        alert(JSON.stringify(messageObject));
+        //alert(JSON.stringify(messageObject));
         window.ReactNativeWebView?.postMessage(JSON.stringify(messageObject))
       }
     });
