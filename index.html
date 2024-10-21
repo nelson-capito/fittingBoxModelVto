@@ -54,7 +54,9 @@
       );
     }
     window.onload = addOverlay;
-    console.log(window.ReactNativeWebView);
+    window.addEventListener("message", message => {
+                alert(message.data) 
+              })
 
   </script>
 </body>
