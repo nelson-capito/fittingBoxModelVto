@@ -54,9 +54,11 @@
       );
     }
     window.onload = addOverlay;
-    window.addEventListener("message", message => {
-                console.log(JSON.stringify(message.data))
-              })
+
+    window.addEventListener('message', (nativeEvent) => {                      
+      alert(nativeEvent?.data);
+      console.log(JSON.stringify(message.data))
+    });
 
   </script>
 </body>
