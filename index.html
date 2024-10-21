@@ -58,7 +58,9 @@
     window.addEventListener('message', (nativeEvent) => {  
       let messageObject = JSON.stringify(nativeEvent.data);
       if (messageObject?.scanId?.length >=0 && messageObject?.glassesId?.length >=0) {
-        alert(messageObject)
+        alert(messageObject);
+        let partMessageObject = JSON.parse(messageObject);
+        alert(`scanId ${partMessageObject.scanId}`);
       }
     });
 
