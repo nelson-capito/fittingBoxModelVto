@@ -62,7 +62,8 @@
       let messageObject = JSON.stringify(nativeEvent.data);
       let parseMessageObject = nativeEvent.data;
 
-      alert(parseMessageObject);
+      alert(parseMessageObject?.scanId);
+      alert(messageObject?.scanId);
       //alert(`scanId - ${messageObject?.scanId} - ${parseMessageObject?.scanId}`);
       //if (messageObject?.scanId?.length >=0 && messageObject?.glassesId?.length >=0) {
       if (parseMessageObject?.contains('scanId')){
