@@ -73,9 +73,10 @@
         //window.ReactNativeWebView?.postMessage(messageObject)
       }
 
-      if (parseMessageObject?.scanId?.length >=0 && parseMessageObject?.glassesId?.length >=0) {
-        alert('2valid scanId and glassId');
-        //window.ReactNativeWebView?.postMessage('2valid scanId and glassId')
+      if (messageObject?.['scanId']){
+        alert('1valid scanId and glassId');
+        //window.ReactNativeWebView?.postMessage('1valid scanId and glassId')
+        addOverlay();
         //window.ReactNativeWebView?.postMessage(messageObject)
       }
     });  
