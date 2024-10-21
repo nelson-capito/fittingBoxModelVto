@@ -56,16 +56,17 @@
         }
       );
     }
-    window.onload = addOverlay;
+   //window.onload = addOverlay;
 
     window.addEventListener('message', (nativeEvent) => {
       let messageObject = JSON.stringify(nativeEvent.data);
-      let parseMessageObject = JSON.stringify(messageObject);
+      let parseMessageObject = nativeEvent.data;
       window.ReactNativeWebView?.postMessage("before post message");
 
       alert(parseMessageObject);
       //alert(`scanId - ${messageObject?.scanId} - ${parseMessageObject?.scanId}`);
-      if (messageObject?.scanId?.length >=0 && messageObject?.glassesId?.length >=0) {
+      //if (messageObject?.scanId?.length >=0 && messageObject?.glassesId?.length >=0) {
+      if (messageObject?.contains('scanId')){
         alert('1valid scanId and glassId');
         //window.ReactNativeWebView?.postMessage('1valid scanId and glassId')
         addOverlay();
