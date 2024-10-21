@@ -61,18 +61,18 @@
     window.addEventListener('message', (nativeEvent) => {
       let messageObject = JSON.stringify(nativeEvent.data);
       let parseMessageObject = nativeEvent.data;
-      window.ReactNativeWebView?.postMessage(messageObject?.scanId?.length);
+      window.ReactNativeWebView?.postMessage("before post message");
       //alert(`scanId - ${messageObject?.scanId} - ${parseMessageObject?.scanId}`);
       if (messageObject?.scanId?.length >=0 && messageObject?.glassesId?.length >=0) {
         alert('1valid scanId and glassId');
-        window.ReactNativeWebView?.postMessage('1valid scanId and glassId')
+        //window.ReactNativeWebView?.postMessage('1valid scanId and glassId')
         addOverlay();
         //window.ReactNativeWebView?.postMessage(messageObject)
       }
 
       if (parseMessageObject?.scanId?.length >=0 && parseMessageObject?.glassesId?.length >=0) {
         alert('2valid scanId and glassId');
-        window.ReactNativeWebView?.postMessage('2valid scanId and glassId')
+        //window.ReactNativeWebView?.postMessage('2valid scanId and glassId')
         //window.ReactNativeWebView?.postMessage(messageObject)
       }
     });  
