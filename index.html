@@ -21,7 +21,7 @@
 <body>
   <div id="overlay" class="lunOverlay"></div>
   <script src="https://bsdk.api.ditto.com/default/5.6.0/en-us/api.js"></script>
-<!--<script>
+  <script>
     
     function addOverlay() {
       // Overlay Constructor/
@@ -40,12 +40,15 @@
         {
           initialized: (d) => {
             //alert('initialized')
+            window.ReactNativeWebView?.postMessage("initiated");
           },
           success: (d) => {
             //alert('success')
+            window.ReactNativeWebView?.postMessage("success");
           },
           failure: (e) => {
             //alert('failure')
+            window.ReactNativeWebView?.postMessage("failed");
           },
           onclick: (ev) => {
             //alert('onclick')
@@ -71,9 +74,8 @@
         window.ReactNativeWebView?.postMessage('2valid scanId and glassId')
         //window.ReactNativeWebView?.postMessage(messageObject)
       }
-    });
+    });  
+  </script>
 
-  
-  </script>-->
 </body>
 </html>
