@@ -23,7 +23,7 @@
   <script src="https://bsdk.api.ditto.com/default/5.6.0/en-us/api.js"></script>
   <script>
     
-    function addOverlay() {
+    function addOverlay(_scanId, _glassesId) {
       // Overlay Constructor/
       new Ditto.Overlay(
         {
@@ -31,8 +31,8 @@
           domSelector: "#overlay",
           accessKey: "1840784ba7da9008",
           partnerId: "idealvision",
-          scanId: "ditto_model_male_06_hd",
-          glassesId: "CV708BLKT1522M48",
+          scanId: _scanId,
+          glassesId: _glassesId,
           overlaySignature: "ZGl0dG9fbW9kZWxfbWFsZV8wNl9oZC4xNzI5MzEyMzMwLnlYT29ZM0VzU2U4WlVvYXc4RW9tZDF1TzVkNWxYWFFyaTlLNFJRbmdERW84ZkR5LVBmX2Q3YUpOUkxKQnMwSGRtRTFHWGQ2Si1CTUhoclBidXlGNmRR",
           disablePreview: true,
           a11yOverlayTurnIndicator: false,
