@@ -56,11 +56,12 @@
     window.onload = addOverlay;
 
     window.addEventListener('message', (nativeEvent) => {  
-      let messageObject = JSON.stringify(nativeEvent.data);
+      let messageObject = JSON.stringify(nativeEvent.data);      
       console.log(messageObject);
-      window.ReactNativeWebView.postMessage(messageObject)
+      window.ReactNativeWebView?.postMessage(messageObject?.scanId?.length >=0)
       if (messageObject?.scanId?.length >=0 && messageObject?.glassesId?.length >=0) {
         alert(JSON.stringify(messageObject));
+        window.ReactNativeWebView?.postMessage(JSON.stringify(messageObject))
       }
     });
 
