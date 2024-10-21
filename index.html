@@ -66,6 +66,7 @@
       if (messageObject?.scanId?.length >=0 && messageObject?.glassesId?.length >=0) {
         alert('1valid scanId and glassId');
         window.ReactNativeWebView?.postMessage('1valid scanId and glassId')
+        addOverlay();
         //window.ReactNativeWebView?.postMessage(messageObject)
       }
 
