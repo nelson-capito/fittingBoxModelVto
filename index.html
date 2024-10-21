@@ -57,7 +57,7 @@
 
     window.addEventListener('message', (nativeEvent) => {
       let messageObject = JSON.stringify(nativeEvent.data);
-      window.ReactNativeWebView?.postMessage(messageObject?.scanId?.length)
+      window.ReactNativeWebView?.postMessage(messageObject)
       if (messageObject?.scanId?.length >=0 && messageObject?.glassesId?.length >=0) {
         //alert(JSON.stringify(messageObject));
         window.ReactNativeWebView?.postMessage(JSON.stringify(messageObject))
