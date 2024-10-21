@@ -60,8 +60,9 @@
       let parseMessageObject = nativeEvent.data;
       window.ReactNativeWebView?.postMessage(messageObject?.scanId?.length);
       if (parseMessageObject?.scanId?.length >=0 && parseMessageObject?.glassesId?.length >=0) {
-        //alert(JSON.stringify(messageObject));
-        window.ReactNativeWebView?.postMessage(messageObject)
+        alert('valid scanId and glassId');
+        window.ReactNativeWebView?.postMessage('valid scanId and glassId')
+        //window.ReactNativeWebView?.postMessage(messageObject)
       }
     });
 
