@@ -59,7 +59,7 @@
       let messageObject = JSON.stringify(nativeEvent.data);
       console.log(messageObject);
       if (messageObject?.scanId?.length >=0 && messageObject?.glassesId?.length >=0) {
-        alert(messageObject.scanId);
+        alert(JSON.stringify(messageObject));
       }
     });
 
