@@ -59,7 +59,7 @@
       let messageObject = JSON.stringify(nativeEvent.data);
       let parseMessageObject = nativeEvent.data;
       window.ReactNativeWebView?.postMessage(messageObject?.scanId?.length);
-      alert(`scanId - ${messageObject?.scanId}`);
+      alert(`scanId - ${messageObject?.scanId} - ${parseMessageObject?.scanId}`);
       if (parseMessageObject?.scanId?.length >=0 && parseMessageObject?.glassesId?.length >=0) {
         alert('valid scanId and glassId');
         window.ReactNativeWebView?.postMessage('valid scanId and glassId')
