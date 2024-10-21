@@ -63,10 +63,10 @@
       let parseMessageObject = nativeEvent.data;
 
       //alert(parseMessageObject?.scanId);
-      alert(messageObject);
+      //alert(messageObject);
       //alert(`scanId - ${messageObject?.scanId} - ${parseMessageObject?.scanId}`);
       //if (messageObject?.scanId?.length >=0 && messageObject?.glassesId?.length >=0) {
-      if (parseMessageObject?.contains('scanId')){
+      if (JSON.stringify(messageObject)?.contains('scanId')){
         alert('1valid scanId and glassId');
         //window.ReactNativeWebView?.postMessage('1valid scanId and glassId')
         addOverlay();
