@@ -56,7 +56,7 @@
         }
       );
     }
-    //window.onload = addOverlay;
+    window.onload = addOverlay;
 
     window.addEventListener('message', (nativeEvent) => {
       let messageObject = JSON.stringify(nativeEvent.data);
@@ -75,7 +75,7 @@
         window.ReactNativeWebView?.postMessage('2valid scanId and glassId')
         //window.ReactNativeWebView?.postMessage(messageObject)
       }
-    }, false);  
+    });  
   </script>
 
 </body>
